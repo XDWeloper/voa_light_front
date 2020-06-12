@@ -3,6 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  mainUrl: 'http://localhost:3000/data',
+  infosUrl: 'http://localhost:3000/info',
+  authUrl: 'http://localhost:3000/auth',
   production: false
 };
 

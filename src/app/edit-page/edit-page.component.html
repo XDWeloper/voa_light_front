@@ -1,0 +1,67 @@
+<div class="edit-container">
+
+  <table>
+    <thead>
+      <h6>{{ecounter.name}}</h6>
+    </thead>
+    <tr >
+      <td>Предыдущая дата оплаты: </td>
+      <td>{{ecounter.lastdate | date: 'dd.MM.yyyy'}}</td>
+    </tr>
+    <tr>
+      <td>Предыдущие показания: </td>
+      <td>{{ecounter.indication}} квт.</td>
+    </tr>
+    <tr>
+      <td>Предыдущая оплата: </td>
+      <td> {{ecounter.pay}} руб.</td>
+    </tr>
+    <tr>
+      <td>Сегодня:</td>
+      <td> {{today | date: 'dd.MM.yyyy'}} </td>
+    </tr>
+    <tr class="indication">
+      <td>Разность показаний: </td>
+      <td class="ind-td"> {{ecounterdif}} </td>
+    </tr>
+    <tr class="indication">
+      <td>Стоимость электороэнергии: </td>
+      <td class="ind-td"> {{ecounterdif * info.energycost}} </td>
+    </tr>
+    <tr class="indication" *ngIf="isInternet">
+      <td>Интернет: </td>
+      <td class="ind-td"> {{internet}} </td>
+    </tr>
+    <tr class="indication">
+      <td>Стоимость аренды: </td>
+      <td class="ind-td"> {{info.rentcost}} </td>
+    </tr>
+    <tr class="indication">
+      <td>Итого оплата: </td>
+      <td class="ind-td"> {{internet + info.rentcost + ecounterdif * info.energycost}} </td>
+    </tr>
+    <tr class="indication" *ngIf="spec">
+      <td>Итого каждому: </td>
+      <td class="ind-td"> {{spec}} </td>
+    </tr>
+
+  </table>
+
+  <br>
+
+  <div class="input-control" >
+    <label for="title">Показания счетчика: </label>
+    <input id="title" type="number" name="indication" placeholder="Введите показания..."
+           (keyup)="onKeyUp()"
+           [(ngModel)]="evalue" #indication="ngModel" required pattern="[0-9]+"/>
+    <div [hidden]="indication.valid || indication.untouched " class="alert alert-danger">
+      <h5>Некорректные показания</h5>
+    </div>
+  </div>
+
+
+<div class="button-container">
+<button class="btn " (click)="saveIndication()" [disabled]="indication.invalid && ecounter.id != 9" > Сохранить </button>
+<button class="btn btn-cancel" [routerLink]="['/home']"> Отменить </button>
+</div>
+</div>

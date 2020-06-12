@@ -1,0 +1,28 @@
+.ecounter{
+  margin: 5px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 15px;
+  h6{
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    color: darkred;
+  }
+
+  .buble{
+    height: 1rem;
+    width: 1rem;
+    background-color: darkred;
+    float: right;
+    border-radius: .5rem ;
+  }
+  .name{
+    .payed{
+      background-color: darkgreen;
+    }
+  }
+  .info{
+    display: inline-block !important;
+  }
+}

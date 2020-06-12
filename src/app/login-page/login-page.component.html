@@ -1,0 +1,22 @@
+
+
+<form  class="card" [formGroup]="form" (ngSubmit)="submit()" >
+  <h4>Введите пин код</h4>
+
+
+  <div class="form-control" [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}">
+<!--    <label for="password">Пароль</label>-->
+    <input class="password" type="number" formControlName="password"  placeholder="pin code">
+    <div class="validation" *ngIf="form.get('password').touched && form.get('password').invalid">
+      <small *ngIf="form.get('password').errors.required">Обязательное поле</small>
+      <small *ngIf="form.get('password').errors.minlength">НЕ соответствует длинне пароля</small>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="form.invalid || submited"
+  >Войти</button>
+
+</form>

@@ -1,0 +1,20 @@
+<div class="ecounter mat-card" [hidden]="!isVisible">
+  <div class="name">
+    <div class="buble" [ngClass]="{payed: isPay}"> </div>
+    <h6>{{ecounter.name}} <small *ngIf="ecounter.phone" >Телефон: {{ecounter.phone}}</small> </h6>
+
+    <div class="info">
+      <div><b>дата: {{ecounter.lastdate| date: 'dd.MM.yyyy'}}</b></div>
+      <div><small>Показания: {{ecounter.indication}} квт. </small></div>
+      <div><small>Потребление: {{ecounter.lastdiffer}} квт. * {{info.energycost}} = {{(ecounter.lastdiffer * info.energycost) | number: '.2'}} руб.</small></div>
+      <div><small>Аренда: {{info.rentcost}} руб. </small></div>
+      <div><small>Интернет: {{internet}} руб.</small></div>
+      <div><small>Оплата: {{ecounter.pay}} руб.</small></div>
+
+    </div>
+
+
+  </div>
+
+
+</div>

@@ -1,0 +1,39 @@
+.edit-container{
+  padding: 5px;
+  table{
+    margin: auto;
+  }
+  .button-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem 2rem 0 2rem;
+  }
+  .button{
+    //display: inline-block;
+    //background: #f4f4f4;
+    //color: #333;
+    //padding: 0.4rem 1.3rem;
+    //font-size: 1rem;
+    //border: none;
+    //cursor: pointer;
+    //margin-right: 0.5rem;
+    //transition: opacity 0.2s ease-in;
+    //outline: none;
+  }
+  .btn-cancel{
+    background: darkred;
+    color: white;
+  }
+  .alert-danger{
+    color: darkred;
+  }
+  .indication{
+    border-radius: 0.5rem;
+    //background-color: lightseagreen;
+    color: darkred;
+    .ind-td{
+      text-align: right;
+    }
+  }
+}

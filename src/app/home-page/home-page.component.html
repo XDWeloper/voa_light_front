@@ -1,0 +1,14 @@
+<div
+  class="ecounters"
+  *ngIf="ecounter$ | async as ecounters; else loading">
+  <app-ecounter *ngFor="let ecounter of ecounters"
+                [ecounter]="ecounter"
+                (click)="onClick(ecounter)"
+                ></app-ecounter>
+</div>
+
+<ng-template #loading>
+  <p class="text-center">
+    Идет загрузка...
+  </p>
+</ng-template>
